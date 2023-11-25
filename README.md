@@ -48,7 +48,8 @@ Built with Node.js, Express, and Bootstrap, SocialSnap also includes user authen
 - **Route**: `/feed`
 - Description: Feed page displaying posts.
 - ### PREVIEW:
-- ![image](https://github.com/Madhukar-Reddy2002/pintrest/assets/104265607/d1146df6-e4a4-4a83-b5dd-e7701f078d95)
+- ![image](https://github.com/Madhukar-Reddy2002/pintrest/assets/104265607/05586238-7dc7-4533-ab17-5d1bd212742c)
+
 
 
 ### `profile.ejs`
@@ -56,7 +57,8 @@ Built with Node.js, Express, and Bootstrap, SocialSnap also includes user authen
 - **Route**: `/profile`
 - Description: User profile page.
 - ### PREVIEW:
-- ![image](https://github.com/Madhukar-Reddy2002/pintrest/assets/104265607/ce00d4a0-9bb0-4509-b448-bfbf7a942690)
+- ![image](https://github.com/Madhukar-Reddy2002/pintrest/assets/104265607/c9f8b618-8418-480d-83a5-7a7d154360a9)
+
 
 
 ## Routes
