@@ -1,0 +1,162 @@
+*{
+  margin: 0;
+  padding: 0;
+	background-color: #262626;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", "Myriad          Pro", "DejaVu Sans Condensed", Helvetica, Arial,        "sans-serif";
+}
+
+.container
+{
+  padding-top: 13vh;
+  width: 1400px;
+  margin: auto;
+  columns: 6;
+  column-gap: 20px;
+  
+}
+.container .box
+{
+  width: 100%;
+  margin-bottom: 10px;
+  break-inside: avoid;
+  border-radius: 15px;
+}
+.container .box img
+{
+  max-width: 100%;
+  min-width: 100%;
+}
+
+
+img:hover {
+  opacity: .95;
+  box-shadow: 0 0 10px #fff;
+}
+
+.caption-overlay{
+	color: #fff;
+	font-family: cursive;
+	width: 100%;
+	text-align: center;
+	padding: 4px;
+	font-size: larger;
+}
+
+@media (max-width: 1427px)
+{
+  .container
+  {
+    columns: 5;
+    width: calc(100% - 40px);
+  }
+}
+@media (max-width: 1200px)
+{
+  .container
+  {
+    columns: 4;
+  }
+}
+
+@media (max-width: 1000px)
+{
+  .container
+  {
+    columns: 3;
+  }
+  
+  
+}
+
+@media (max-width: 786px)
+{
+  .container
+  {
+    columns: 2;
+  }
+}
+
+
+@media (max-width: 480px)
+{
+  .container
+  {
+    columns: 1;
+  }
+}
+.box {
+    position: relative;
+    overflow: hidden;
+	  border: 2px solid white;
+}
+
+.user-overlay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+	width: 100%;
+	text-align: center;
+	border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  color: #fff;
+  transition: opacity 0.3s;
+}
+.dp img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-overlay {
+    top: 0;
+    left: 0;
+}
+
+.box:hover .user-overlay,
+.box:hover .caption-overlay {
+    opacity: 0.9;
+}
+
+.box img {
+    transition: opacity 0.3s, box-shadow 0.3s;
+}
+
+.box:hover img {
+    opacity: 0.95;
+    box-shadow: 0 0 10px #fff;
+}
+
+/* Your existing styles */
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000000;
+  position: fixed;
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+  z-index: 1;
+  opacity: 0.9;
+  padding: 15px 0px;
+}
+.navbar a{
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+.profile{
+  color: aqua;
+  font-weight: 900;
+}
+.logout{
+  color: red;
+  font-weight: 900;
+}

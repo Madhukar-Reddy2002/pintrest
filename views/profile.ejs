@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/feed" class="profile">
+            All Profiles
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M335 343.43H65V300.06C65 254.02 102.33 216.69 148.37 216.69H251.63C297.67 216.69 335 254.02 335 300.06V343.43Z"
+                        stroke="aqua" stroke-width="12" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M200 186.57C235.899 186.57 265 157.468 265 121.57C265 85.6713 235.899 56.5698 200 56.5698C164.101 56.5698 135 85.6713 135 121.57C135 157.468 164.101 186.57 200 186.57Z"
+                        stroke="aqua" stroke-width="12" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </a>
+        <a href="/logout" class="logout">
+            Logout
+            <div class="menu-toggle">
+                <svg width="40" height="40" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M200 350C282.843 350 350 282.843 350 200C350 117.157 282.843 50 200 50C117.157 50 50 117.157 50 200C50 282.843 117.157 350 200 350Z"
+                        stroke="red" stroke-width="12" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M262 141.91L138 265.91" stroke="red" stroke-width="12" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M262 265.91L138 141.91" stroke="red" stroke-width="12" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </a>
+    </nav>
+    <div class="container">
+        <div class="user-container">
+            <div class="card-container">
+                <% const dpPost = user.posts.filter(post => post.imageText === 'dp').pop(); %>
+                <% if(dpPost) { %>
+                    <img class="round" src="/images/uploads/<%= dpPost.image %>" alt="user"><% } else { %>
+                        <img class="round" src="/images/uploads/default.jpg" alt="user"><% } %>
+                <h3><%= user.fullname %></h3>
+                <h6 class="handle">@<%= user.username %></h6>
+                <h6 class="bio"><%= user.bio %></h6>
+            </div>
+
+            <div class="upload-container">
+                <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+                    <label for="file" class="choose-label">Choose File</label>
+                    <input id="file" class="choose" type="file" name="file" accept="image/*">
+                    <input class="caption" type="text" name="caption" placeholder="Caption" id="caption">
+                    <input class="upload" type="submit" value="Upload">
+                </form>
+            </div>
+        </div>
+
+        <div class="posts-container">
+            <div class="cards flex">
+                <% user.posts.forEach(post => { %>
+                    <% if(post.imageText !== 'dp') { %>
+                      <div class="card">
+                        <img src="/images/uploads/<%= post.image %>" class="card-img-top" alt="post-image">
+                        <div class="card-body">
+                          <h4 class="card-text"><%= post.imageText %></h4>
+                        </div>
+                      </div>
+                    <% } %>  
+                  <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
